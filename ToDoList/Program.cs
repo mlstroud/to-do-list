@@ -44,5 +44,13 @@ namespace ToDoList
           break;
       }
     }
+
+    public static void AddItem()
+    {
+      Console.WriteLine("Please enter the description for your new task: ");
+      string newTask = Console.ReadLine();
+
+      Item item = new Item(newTask);
+    }
   }
 }
