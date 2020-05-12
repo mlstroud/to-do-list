@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using ToDoList.Models;
 
 namespace ToDoList
@@ -51,6 +52,23 @@ namespace ToDoList
       string newTask = Console.ReadLine();
 
       Item item = new Item(newTask);
+    }
+
+    public static void ViewList()
+    {
+      List<Item> items = Item.GetAll();
+
+      if (items.Count == 0)
+      {
+        Console.WriteLine("You have no current tasks.");
+      }
+      else
+      {
+        for (int index = 0; index < items.Count; index++)
+        {
+          Console.WriteLine((index + 1) + ". " + items[index]);
+        }
+      }
     }
   }
 }
