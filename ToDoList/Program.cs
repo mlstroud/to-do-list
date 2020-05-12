@@ -40,6 +40,9 @@ namespace ToDoList
         case "view":
           ViewList();
           break;
+        case "quit":
+          Console.WriteLine("Thank you, goodbye.");
+          break;
         default:
           Console.WriteLine("Sorry, that was not a valid option.");
           break;
