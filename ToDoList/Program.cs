@@ -12,7 +12,8 @@ namespace ToDoList
       while (userSelection != "quit")
       {
         Greet();
-        userSelection = GetUserInput();
+        userSelection = GetUserInput().ToLower();
+        ValidateInput(userSelection);
       }
     }
 
@@ -26,6 +27,22 @@ namespace ToDoList
     {
       string userInput = Console.ReadLine();
       return userInput;
+    }
+
+    public static void ValidateInput(string input)
+    {
+      switch (input)
+      {
+        case "add":
+          AddItem();
+          break;
+        case "view":
+          ViewList();
+          break;
+        default:
+          Console.WriteLine("Sorry, that was not a valid option.");
+          break;
+      }
     }
   }
 }
