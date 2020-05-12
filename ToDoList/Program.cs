@@ -69,7 +69,7 @@ namespace ToDoList
       {
         for (int index = 0; index < items.Count; index++)
         {
-          Console.WriteLine((index + 1) + ". " + items[index]);
+          Console.WriteLine((index + 1) + ". " + items[index].Description);
         }
       }
     }
