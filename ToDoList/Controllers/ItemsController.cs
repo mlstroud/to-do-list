@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ToDoList.Controllers
 {
-  public class ItemsControllerController : Controller
+  public class ItemsController : Controller
   {
     [HttpGet("/items")]
     public ActionResult Index()
@@ -14,7 +14,7 @@ namespace ToDoList.Controllers
     }
 
     [HttpGet("/items/new")]
-    public ActionResult CreateForm()
+    public ActionResult New()
     {
       return View();
     }
@@ -24,6 +24,13 @@ namespace ToDoList.Controllers
     {
       Item myItem = new Item(description);
       return RedirectToAction("Index");
+    }
+
+    [HttpPost("/items/delete")]
+    public ActionResult DeleteAll()
+    {
+      Item.ClearAll();
+      return View();
     }
   }
 }
